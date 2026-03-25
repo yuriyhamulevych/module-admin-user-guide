@@ -189,3 +189,25 @@
         100% {-webkit-transform: rotateY(-360deg);-o-transform: rotateY(-360deg);transform: rotateY(-360deg);
         }
     }
+
+    .action-select-wrap .action-menu-items > .action-menu .action-submenu {z-index: 1;}
+    /*compatibility with product-grid-inline */
+    .action-select-wrap .action-menu-items > .action-menu .mf-product-grid-inline:nth-of-type(n+6) .action-submenu:not(.mf-action-submenu) {top: 48%;}
+
+    button.mf_auto_translate span {
+        position: relative;
+        padding-left: 35px;
+    }
+
+    button.mf_auto_translate span::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        width: 28px;
+        height: 28px;
+        background-image: url('../image/translate_icon.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<type name="Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit">
+        <plugin name="add_auto_translation_button_on_attributes_form" type="Magefan\TranslationExtra\Plugin\Backend\Magento\Catalog\Block\Adminhtml\Product\Attribute\Edit" sortOrder="10" disabled="false"/>
+    </type>-->
+
+    <type name="Magento\Backend\Block\Widget\Grid\Massaction">
+        <plugin name="maug_add_auto_translate_mass_actions_to_blog_grid" type="Magefan\AdminUserGuide\Plugin\Backend\Magento\Backend\Block\Widget\Grid\Massaction" sortOrder="10" disabled="false"/>
+    </type>
+
+   <!-- <type name="Magefan\TranslationExtra\Ui\Component\MassAction\Stores">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="paramName" xsi:type="string">storeIds</item>
+                <item name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translatable="true">Translate items</item>
+                    <item name="message" xsi:type="string" translatable="true">Translate selected items?</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Magefan\TranslationExtra\Ui\Component\MassAction\Stores\CMSPage" type="Magefan\TranslationExtra\Ui\Component\MassAction\Stores">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">translationextra/page/massTranslate</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\TranslationExtra\Ui\Component\MassAction\Stores\CMSBlock" type="Magefan\TranslationExtra\Ui\Component\MassAction\Stores">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">translationextra/block/massTranslate</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\TranslationExtra\Ui\Component\MassAction\Stores\Product" type="Magefan\TranslationExtra\Ui\Component\MassAction\Stores">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">translationextra/product/massTranslate</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Magefan\TranslationExtra\Ui\Component\MassAction\Stores\Translation" type="Magefan\TranslationExtra\Ui\Component\MassAction\Stores">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">translationextra/translation/massTranslate</item>
+            </argument>
+        </arguments>
+    </virtualType>-->
+</config>

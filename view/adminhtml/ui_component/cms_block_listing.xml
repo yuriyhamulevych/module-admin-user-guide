@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magefan (support@magefan.com). All rights reserved.
+ * Please visit Magefan.com for license details (https://magefan.com/end-user-license-agreement).
+ */
+-->
+<!--
+/**
+ applying without button, need js logic to add not popup now
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+
+        <massaction name="listing_massaction"
+                    component="Magento_Ui/js/grid/tree-massactions"
+                    class="\Magento\Ui\Component\MassAction">
+
+            <action name="mass_translate">
+                <settings>
+                    <type>mass_translate</type>
+                    <label translate="true">Auto Translate</label>
+                    <actions class="Magefan\AdminUserGuide\Ui\Component\MassAction\Stores"/>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>

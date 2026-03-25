@@ -1,0 +1,63 @@
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/confirm', 'mage/translate', 'domReady!'],
+        function($, confirm, $t) {
+
+            var confirmed = false;
+            var $submitBtn   = $('button.action-default[title="Submit"]');
+
+            var $form = $('[id$="_massaction-form"]');
+
+            $form.on('click', function(e) {
+
+                if (confirmed) return true;
+
+                var action = null;
+                $('select').each(function() {
+                    if ($(this).val().includes('mass_translate_store_')) {
+                        action = $(this).val();
+                        $submitBtn.hide();
+                        return false;
+                    } else {
+                        $submitBtn.show();
+                    }
+                });
+
+                if (!action) return true;
+
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                confirm({
+                    title: $t('Auto Translate'),
+                    content: '<p>' + $t('To activate this functional you need to install the module.') + '</p>',
+                    actions: {
+                        confirm: function() {
+                            confirmed = true;
+                            $form.attr('action', window.location.href);
+                            $form[0].submit();
+                        },
+                        cancel: function() {
+                            confirmed = false;
+                        }
+                    },
+                    buttons: [
+                        {
+                            text: $t('Cancel'),
+                            class: 'action-secondary action-dismiss',
+                            click: function(e) { this.closeModal(e); }
+                        },
+                        {
+                            text: $t('Install Translation Extension'),
+                            class: 'action primary accept',
+                            click: function(e) {
+                                window.open('https://magefan.com/magento-2-translation-extension?utm_source=adminhtml_widget_instance_index&utm_medium=link&utm_campaign=admin-user-guide');
+                                this.closeModal(e);
+                            }
+                        }
+                    ]
+                });
+
+                return false;
+            });
+        });
+</script>
